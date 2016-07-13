@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>demo</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./plugins/ztree/zTreeStyle/zTreeStyle.css" type="text/css">
+  <style>
+	body {
+		background-color: white;
+		margin:0; 
+		padding:0;
+		text-align: center;
+	}
+	div, p, table, th, td {
+		list-style:none;
+		margin:0; 
+		padding:0;
+		color:#333; 
+		font-size:12px;
+		font-family:dotum, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+	}
+  </style>
+<script type="text/javascript" src="./plugins/ztree/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="./plugins/ztree/jquery.ztree.all.min.js"></script>
+  <script type="text/javascript" >
+  <!--
+	var zTree;
+	var demoIframe;
+
+	var setting = {
+		view: {
+			dblClickExpand: false,
+			showLine: true,
+			selectedMulti: false
+		},
+		data: {
+			simpleData: {
+				enable:true,
+				idKey: "id",
+				pIdKey: "pId",
+				rootPId: ""
+			}
+		},
+		callback: {
+			beforeClick: function(treeId, treeNode) {
+				var zTree = $.fn.zTree.getZTreeObj("tree");
+				if (treeNode.isParent) {
+					zTree.expandNode(treeNode);
+					return false;
+				} else {
+					demoIframe.attr("src",treeNode.file + ".html");
+					return true;
+				}
+			}
+		}
+	};
+
+	var zNodes =[
+		{id:1, pId:0, name:"java", open:false},
+		{id:101, pId:1, name:"java jmap", file:"java/java_jmap"},
+
+		{id:2, pId:0, name:"mysql", open:false},
+		{id:201, pId:2, name:"创建/修改表", file:"mysql/table"},
+		{id:206, pId:2, name:"添加/修改列", file:"mysql/column"},
+		{id:207, pId:2, name:"数据库编码", file:"mysql/encode"},
+		{id:208, pId:2, name:"复制表", file:"mysql/copy_table"},
+		{id:202, pId:2, name:"索引", file:"mysql/index"},
+		{id:203, pId:2, name:"金额处理", file:"mysql/amount"},
+		{id:204, pId:2, name:"系统日期函数", file:"mysql/sysdate"},
+		{id:209, pId:2, name:"日期处理", file:"mysql/date"},
+		{id:210, pId:2, name:"行列转换", file:"mysql/column_convert"},
+		{id:211, pId:2, name:"分组获取最大", file:"mysql/group_max"},
+		{id:205, pId:2, name:"重复数据处理", file:"mysql/repeat_data"},
+
+		{id:3, pId:0, name:"linux", open:false},
+		{id:301, pId:3, name:"查询进程", file:"linux/process_query"}
+	];
+
+	$(document).ready(function(){
+		var t = $("#tree");
+		t = $.fn.zTree.init(t, setting, zNodes);
+		demoIframe = $("#testIframe");
+		// demoIframe.bind("load", loadReady);
+		var zTree = $.fn.zTree.getZTreeObj("tree");
+		zTree.selectNode(zTree.getNodeByParam("id", 101));
+
+	});
+
+	function loadReady() {
+		var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+		htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+		maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
+		h = demoIframe.height() >= maxH ? minH:maxH ;
+		if (h < 530) h = 530;
+		demoIframe.height(h);
+	}
+
+  //-->
+  </script>
+ </head>
+
+<body>
+<table border=0 height=600px align=left>
+	<tr>
+		<td width=260px align=left valign=top style="border-right: #999999 1px dashed">
+			<ul id="tree" class="ztree" style="width:260px; overflow:auto;"></ul>
+		</td>
+		<td width=800px align=left valign=top>
+			<iframe id="testIframe" frameborder=0 scrolling=auto width=100% height=600px src="java/java_jmap.html"></iframe>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
