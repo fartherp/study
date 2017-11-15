@@ -237,5 +237,12 @@ mvn versions:set -DnewVersion=1.0.0
 2. 执行 
 mvn clean deploy -P release
 ```
-
+8. 回滚版本
+```
+mvn versions:revert
+```
+9. 提交版本
+```
+mvn versions:commit
+```
 
