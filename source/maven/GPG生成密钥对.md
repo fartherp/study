@@ -43,3 +43,9 @@ gpg --keyserver hkp://pool.sks-keyservers.net --send-keys 30509BA4
  gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 30509BA4
 ```
 
+## 查看密钥
+```
+gpg --delete-keys id
+
+ gpg --delete-secret-key id
+
