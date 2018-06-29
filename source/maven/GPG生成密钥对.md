@@ -8,6 +8,9 @@ Windows 系统，可以下载 Gpg4win 软件来生成密钥对。[https://www.gp
 推荐使用 Gpg4win-Vanilla 版本，因为它仅包括 GnuPG，这个工具才是我们所需要的。
 Linux 系统，直接从源中安装gpg软件包就行。
 
+## gpg/gpg2
+> gpg分为gpg和gpg2，需要看自己的maven使用的哪个gpg，再生成对应的gpg密钥。
+
 ### window cygwin
 ```
 apt-cyg install gnupg
@@ -47,5 +50,11 @@ gpg --keyserver hkp://pool.sks-keyservers.net --send-keys 30509BA4
 ```
 gpg --delete-keys id
 
- gpg --delete-secret-key id
+gpg --delete-secret-key id
+```
+
+## git设置全局密钥
+```
+git config --global user.signingkey 30509BA4
+```
 

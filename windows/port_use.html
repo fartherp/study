@@ -1,0 +1,10 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>windows端口占用</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="pvl2" id="windows端口占用">windows端口占用</h1><hr><div class="md-section-divider"></div><h2 data-anchor-id="gja4" id="列出所有端口的情况">列出所有端口的情况</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="oahu"><ol class="linenums"><li class="L0"><code><span class="pln">netstat </span><span class="pun">-</span><span class="pln">ano</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="yzvc" id="查看被占用端口对应的pid">查看被占用端口对应的PID</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="qnpc"><ol class="linenums"><li class="L0"><code><span class="pln">netstat </span><span class="pun">-</span><span class="pln">aon</span><span class="pun">|</span><span class="pln">findstr </span><span class="pun">“</span><span class="lit">8081</span><span class="pun">”</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="4ynj" id="查看是哪个进程或者程序占用了8081端口">查看是哪个进程或者程序占用了8081端口</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="6acx"><ol class="linenums"><li class="L0"><code><span class="pln">tasklist</span><span class="pun">|</span><span class="pln">findstr </span><span class="pun">“</span><span class="lit">9088</span><span class="pun">”</span></code></li></ol></pre></div>
+</body>
+</html>
