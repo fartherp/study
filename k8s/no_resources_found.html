@@ -1,0 +1,10 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>解决kubectl get pods时 No resources found.问题</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="icsf" id="解决kubectl-get-pods时-no-resources-found问题">解决kubectl get pods时 No resources found.问题</h1><hr><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="wdvx"><ol class="linenums"><li class="L0"><code><span class="lit">1</span><span class="pun">、</span><span class="pln">$ vi </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">kubernetes</span><span class="pun">/</span><span class="pln">apiserver</span></code></li><li class="L1"><code><span class="lit">2</span><span class="pun">、找到这一行</span><span class="pln"> </span><span class="str">"KUBE_ADMISSION_CONTROL="</span><span class="pun">--</span><span class="pln">admission_control</span><span class="pun">=</span><span class="typ">NamespaceLifecycle</span><span class="pun">,</span><span class="typ">NamespaceExists</span><span class="pun">,</span><span class="typ">LimitRanger</span><span class="pun">,</span><span class="typ">SecurityContextDeny</span><span class="pun">,</span><span class="typ">ServiceAccount</span><span class="pun">,</span><span class="typ">ResourceQuota</span><span class="str">"，去掉ServiceAccount，保存退出。</span></code></li><li class="L2"><code><span class="str">3、systemctl restart kube-apiserver  重启此服务</span></code></li></ol></pre></div>
+</body>
+</html>
