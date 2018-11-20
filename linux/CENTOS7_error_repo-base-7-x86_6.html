@@ -1,0 +1,10 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>解决CENTOS7错误:Cannot find a valid baseurl for repo: base/7/x86_6</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="zltx" id="解决centos7错误cannot-find-a-valid-baseurl-for-repo-base7x866">解决CENTOS7错误:Cannot find a valid baseurl for repo: base/7/x86_6</h1><hr><div class="md-section-divider"></div><h2 data-anchor-id="quu5" id="解决方案">解决方案</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="ld4x"><ol class="linenums"><li class="L0"><code><span class="pln">vi </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">sysconfig</span><span class="pun">/</span><span class="pln">network</span><span class="pun">-</span><span class="pln">scripts</span><span class="pun">/</span><span class="pln">ifcfg</span><span class="pun">-</span><span class="pln">eth0 </span><span class="pun">（每个机子都可能不一样，但格式会是“</span><span class="pln">ifcfg</span><span class="pun">-</span><span class="pln">eth</span><span class="pun">数字”），把</span><span class="pln">ONBOOT</span><span class="pun">=</span><span class="kwd">no</span><span class="pun">，改为</span><span class="pln">ONBOOT</span><span class="pun">=</span><span class="pln">yes</span></code></li><li class="L1"><code><span class="pun">重启网络：</span><span class="pln">service network restart</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="6hvy" id="装个图形界面">装个图形界面</h2><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="0ytk"><ol class="linenums"><li class="L0"><code><span class="pln">yum groupinstall </span><span class="pun">-</span><span class="pln">y </span><span class="str">"GNOME Desktop"</span><span class="pln"> </span><span class="str">"Graphical Administration Tools"</span></code></li></ol></pre></div>
+</body>
+</html>
