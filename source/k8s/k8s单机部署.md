@@ -15,8 +15,16 @@ yum install -y etcd kubernetes
 
 ## 修改配置
 ```
-vi /etc/sysconfig/docker
-OPTIONS='--selinux-enabled=false --insecure-registry gcr.io'
+1、vi /etc/sysconfig/docker
+2、OPTIONS='--selinux-enabled=false --insecure-registry gcr.io'
+
+1、$ vi /etc/kubernetes/apiserver
+2、找到这一行 "KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"，去掉ServiceAccount，保存退出。
+
+1、yum install *rhsm*
+2、wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm
+3、rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem
+4、docker pull registry.access.redhat.com/rhel7/pod-infrastructure:latest
 ```
 
 ## 启动服务
