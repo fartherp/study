@@ -15,6 +15,7 @@ yum install -y etcd kubernetes
 
 ## 修改配置
 ```
+vi /etc/sysconfig/docker
 OPTIONS='--selinux-enabled=false --insecure-registry gcr.io'
 ```
 
