@@ -246,3 +246,13 @@ mvn versions:revert
 mvn versions:commit
 ```
 
+10. maven-release-plugin发布
+```
+mvn release:prepare -Dresume=false # 上传SNAPSHOT版本代码
+
+mvn release:rollback # 有错误
+
+mvn release:clean #清理项目
+
+mvn clean deploy -P release # 发布正式版本
+```
