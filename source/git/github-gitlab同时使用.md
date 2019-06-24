@@ -12,10 +12,10 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" # github邮箱地址 文�
 将id_rsa_github.pub的内容复制出来，并添加到githab 【settings】中的【SSH keys】中
 ```
 
-## 生成gitlub ssh key
+## 生成gitlab ssh key
 ```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com" # gitlub邮箱地址 文件名修改id_rsa_gitlub
-将id_rsa_gitlub.pub的内容复制出来，并添加到githab 【settings】中的【SSH keys】中
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" # gitlab邮箱地址 文件名修改id_rsa_gitlab
+将id_rsa_gitlab.pub的内容复制出来，并添加到githab 【settings】中的【SSH keys】中
 ```
 
 ## 添加配置文件
@@ -28,7 +28,7 @@ Host github.com
 #gitlab
 Host gitlab
     HostName 192.*.*.*（更改为本地gitlab的ip地址）
-    IdentityFile ~/.ssh/id_rsa_gitlub
+    IdentityFile ~/.ssh/id_rsa_gitlab
 ```
 
 ## 启动ssh-agent
@@ -42,9 +42,17 @@ win ssh-agent
 linux ssh-agent bash
 ```
 
+### windows 10 ssh-agent 
+```
+打开git Bash命令行,依次执行
+1. exec ssh-agent bash
+2. eval ssh-agent -s
+3. ssh-add -L #查看公钥
+```
+
 ## 添加私钥
 ```
- ssh-add id_rsa_gitlub #添加gitlab私钥
+ ssh-add id_rsa_gitlab #添加gitlab私钥
  ssh-add id_rsa_github #添加github私钥
 ```
 
