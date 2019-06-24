@@ -137,7 +137,7 @@ maven-settings.xml中配置gpg的签名: （需要先用gpg来生成）
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <gpg.executable>gpg2</gpg.executable>
+        <gpg.executable>gpg</gpg.executable>
         <gpg.passphrase>qwertyuiop</gpg.passphrase>
       </properties>
     </profile>
@@ -248,11 +248,11 @@ mvn versions:commit
 
 10. maven-release-plugin发布
 ```
-mvn release:prepare -Dresume=false # 上传SNAPSHOT版本代码
+mvn release:prepare -Dresume=false -P release # 上传SNAPSHOT版本代码
 
 mvn release:rollback # 有错误
 
 mvn release:clean #清理项目
 
-mvn clean deploy -P release # 发布正式版本
+mvn release:perform -P release # 发布正式版本
 ```
