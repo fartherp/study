@@ -1,6 +1,13 @@
 ﻿# maven release
 
 ---
+
+## 版本
+```
+maven-3.2.5
+gpg4win-2.3.4
+```
+
 ## 初始阶段
 1. 注册一个JIRA账号：https://issues.sonatype.org/secure/Signup!default.jspa
 2. 创建一个新工程的单：https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&pid=10134
