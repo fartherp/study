@@ -16,6 +16,8 @@ Linux 系统，直接从源中安装gpg软件包就行。
 apt-cyg install gnupg
 ```
 
+# 如果使用window以下操作在cmd命令行中进行
+
 ## 查看是否安装成功
 ```
 gpg --version
@@ -44,6 +46,8 @@ gpg --keyserver hkp://keyserver.ubuntu.com --send-keys 30509BA4
 ## 查询公钥是否发布成功
 ```
  gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 30509BA4
+ 
+ 注：使用idea发布代码时，如果退出idea重新登录在发布
 ```
 
 ## 查看密钥
