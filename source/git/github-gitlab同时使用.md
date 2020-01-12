@@ -18,7 +18,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" # gitlab邮箱地址 文�
 将id_rsa_gitlab.pub的内容复制出来，并添加到githab 【settings】中的【SSH keys】中
 ```
 
-## 添加配置文件
+## 添加配置文件 config(不加后缀)
 ```
 # github
 Host github.com
