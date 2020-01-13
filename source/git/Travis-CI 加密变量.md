@@ -1,4 +1,4 @@
-﻿# Travis-CI 加密变量
+﻿# Travis-CI 加密变量（centos系统）
 
 ---
 
@@ -6,7 +6,7 @@
 ```
 yum install -y gcc ruby ruby-devel # 安装gcc和ruby环境
 
-gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/ # 改为国内gem源
+gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ # 改为国内gem源
 
 gem install travis
 ```
