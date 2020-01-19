@@ -256,6 +256,8 @@ mvn versions:commit
 10. maven-release-plugin发布
 ```
 mvn release:prepare -Dresume=false -P release # 上传SNAPSHOT版本代码
+注：依赖环境的可以跳过测试
+mvn release:prepare -Darguments=-DskipTests -P release # 上传SNAPSHOT版本代码
 
 mvn release:rollback # 有错误
 
