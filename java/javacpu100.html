@@ -1,0 +1,10 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>java查看CPU100%</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="hh2p" id="java查看cpu100">java查看CPU100%</h1><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="2icl"><ol class="linenums"><li class="L0"><code><span class="pun">查看哪个</span><span class="pln">PID</span><span class="pun">占用</span><span class="pln">CPU </span><span class="lit">100</span><span class="pun">%：</span><span class="pln">top</span></code></li><li class="L1"><code><span class="pun">进程的栈</span><span class="kwd">dump</span><span class="pun">到文件：</span><span class="pln">jstack </span><span class="pun">-</span><span class="pln">F </span><span class="pun">进程</span><span class="pln">PID </span><span class="pun">&gt;</span><span class="pln"> cpu_100</span><span class="pun">.</span><span class="pln">log</span></code></li><li class="L2"><code><span class="pun">查看进程哪些线程在占用</span><span class="pln">cpu</span><span class="pun">：</span><span class="pln">top </span><span class="pun">-</span><span class="pln">H </span><span class="pun">-</span><span class="pln">p </span><span class="pun">进程</span><span class="pln">PID </span></code></li><li class="L3"><code><span class="pun">查看日志:</span><span class="pln"> vi cpu_100</span><span class="pun">.</span><span class="pln">log</span></code></li></ol></pre></div>
+</body>
+</html>
